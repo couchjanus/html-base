@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js'></script>
+<style>
+
+body {
+  padding: 1%;
+  font: 1/1.5em sans-serif;
+  text-align: center;
+}
+
+.btn {
+  cursor: pointer;
+  background: #27ae60;
+  display: inline-block;
+  padding: .5em 1em;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.btn:hover,
+.btn:focus {
+  background: #2ecc71;
+}
+
+.btn:active {
+  background: #27ae60;
+  box-shadow: 0 1px 2px rgba(0,0,0, .2) inset;
+}
+
+.btn--blue {
+  background: #2980b9;
+}
+
+.btn--blue:hover,
+.btn--blue:focus {
+  background: #3498db;
+}
+
+.btn--blue:active {
+  background: #2980b9;
+}
+
+p img {
+  max-width: 200px;
+  height: auto;
+  float: left;
+  margin: 0 1em 1em 0;
+}
+
+.modal__bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.modal-state {
+  display: none;
+}
+
+.modal__inner {
+  transition: top .25s ease;
+  position: absolute;
+  top: -20%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  margin: auto;
+  overflow: auto;
+  background: #fff;
+  border-radius: 5px;
+  padding: 1em 2em;
+  height: 50%;
+}
+
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: left;
+  background: rgba(0,0,0, .9);
+  transition: opacity .25s ease;
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+<h1>Кошкин дом</h1>
+<div>
+  <p>You can place trigger button wherever you want.</p>
+  <p>
+    <label class="btn" for="modal-1">Show me modal with a cat</label>
+    <label class="btn btn--blue" for="modal-2">Click for more AWW</label>
+  </p>
+</div>
+
+
+<input class="modal-state" id="modal-1" type="checkbox" />
+<div class="modal">
+  <label class="modal__bg" for="modal-1"></label>
+  <div class="modal__inner">
+    <label class="modal__close" for="modal-1"></label>
+    <h2>Выйдет кошка на прогулку</h2>
+    <p><img src="1.gif" alt="" />Выйдет кошка на прогулку Да пройдет по переулку, Смотрят люди, не дыша: До чего же хороша! Да не так она сама, Как узорная тесьма, Как узорная тесьма, Золотая бахрома.  Да не так её тесьма, Как угодья и дома. </p>
+  </div>
+</div>
+
+<input class="modal-state" id="modal-2" type="checkbox" />
+<div class="modal">
+  <label class="modal__bg" for="modal-2"></label>
+  <div class="modal__inner">
+    <label class="modal__close" for="modal-2"></label>
+    <h2>Кот Василий хромоногий</h2>
+    <p><img src="2.gif" alt="" />Вот шагает по дороге Кот Василий хромоногий. Спотыкаясь, чуть бредёт, Кошку под руку ведёт. Вниз спускается дорожка, А потом бежит на скат. И не знает тётя кошка, Что в избушке у окошка — Двое маленьких котят, Двое маленьких котят Под окошечком сидят. Слышат малые, что кто-то Постучался к ним в ворота.</p>
+  </div>
+</div>
+
+</body>
+</html>

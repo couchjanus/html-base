@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js'></script>
+<style>
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+body {
+  padding: 1%;
+  font: 1/1.5em sans-serif;
+  text-align: center;
+}
+
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+.btn {
+  cursor: pointer;
+  background: #27ae60;
+  display: inline-block;
+  padding: .5em 1em;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.btn:hover,
+.btn:focus {
+  background: #2ecc71;
+}
+
+.btn:active {
+  background: #27ae60;
+  box-shadow: 0 1px 2px rgba(0,0,0, .2) inset;
+}
+
+.btn--blue {
+  background: #2980b9;
+}
+
+.btn--blue:hover,
+.btn--blue:focus {
+  background: #3498db;
+}
+
+.btn--blue:active {
+  background: #2980b9;
+}
+
+p img {
+  max-width: 200px;
+  height: auto;
+  float: left;
+  margin: 0 1em 1em 0;
+}
+
+.modal__bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.modal-state {
+  display: none;
+}
+
+.modal__inner {
+  transition: top .25s ease;
+  position: absolute;
+  top: -20%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  margin: auto;
+  overflow: auto;
+  background: #fff;
+  border-radius: 5px;
+  padding: 1em 2em;
+  height: 50%;
+}
+
+.modal {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: left;
+  background: rgba(0,0,0, .9);
+  transition: opacity .25s ease;
+}
+
+.modal-state:checked + .modal {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-state:checked + .modal .modal__inner {
+  top: 0;
+}
+
+.modal__close {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  width: 1.1em;
+  height: 1.1em;
+  cursor: pointer;
+}
+.modal__close:after,
+.modal__close:before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 1.5em;
+  background: #ccc;
+  display: block;
+  transform: rotate(45deg);
+  left: 50%;
+  margin: -3px 0 0 -1px;
+  top: 0;
+}
+
+.modal__close:hover:after,
+.modal__close:hover:before {
+  background: #aaa;
+}
+
+.modal__close:before {
+  transform: rotate(-45deg);
+}
+
+input {
+  background-image: none;
+  border: none;
+  font: 100%/1.5em "Varela Round", sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.container {
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#login {
+  width: 400px;
+}
+
+#login h2 {
+  background: #f95252;
+  border-radius: 20px 20px 0 0;
+  color: #fff;
+  font-size: 28px;
+  padding: 20px 26px;
+}
+
+#login h2 span[class*="fontawesome-"] {
+  margin-right: 14px;
+}
+
+#login fieldset {
+  background: #fff;
+  border-radius: 0 0 20px 20px;
+  padding: 20px 26px;
+}
+
+#login fieldset p {
+  color: #777;
+  margin-bottom: 14px;
+}
+
+#login fieldset p:last-child {
+  margin-bottom: 0;
+}
+
+#login fieldset input {
+  border-radius: 3px;
+}
+
+#login fieldset input[type="email"], #login fieldset input[type="password"] {
+  background: #eee;
+  color: #777;
+  padding: 4px 10px;
+  width: 100%;
+}
+
+#login fieldset input[type="submit"] {
+  background: #33cc77;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  padding: 4px 0;
+  width: 100px;
+}
+
+#login fieldset input[type="submit"]:hover {
+  background: #28ad63;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>Кошкин дом</h1>
+<div>
+  <p>You can place trigger button wherever you want.</p>
+  <p>
+    <label class="btn" for="modal-1">Show me modal with a cat</label>
+    <label class="btn btn--blue" for="modal-2">Click for more AWW</label>
+  </p>
+</div>
+
+
+<input class="modal-state" id="modal-1" type="checkbox" />
+<div class="modal">
+  <label class="modal__bg" for="modal-1"></label>
+  <div class="modal__inner">
+    <label class="modal__close" for="modal-1"></label>
+       <div class="container">
+        <div id="login">
+          <h2><span class="fontawesome-lock"></span>Sign In</h2>
+          <form action="#" method="POST">
+            <fieldset>
+              <p><label for="email">E-mail address</label></p>
+              <p><input type="email" id="email" placeholder="mail@address.com"></p>
+              <p><label for="password">Password</label></p>
+              <p><input type="password" id="password" placeholder="password"></p>
+              <p><input type="submit" value="Sign In"></p>
+            </fieldset>
+          </form>
+        </div> <!-- end login -->
+      </div>
+  </div>
+</div>
+
+<input class="modal-state" id="modal-2" type="checkbox" />
+<div class="modal">
+  <label class="modal__bg" for="modal-2"></label>
+  <div class="modal__inner">
+    <label class="modal__close" for="modal-2"></label>
+    <h2>Кот Василий хромоногий</h2>
+    <p><img src="2.gif" alt="" />Вот шагает по дороге Кот Василий хромоногий. Спотыкаясь, чуть бредёт, Кошку под руку ведёт. Вниз спускается дорожка, А потом бежит на скат. И не знает тётя кошка, Что в избушке у окошка — Двое маленьких котят, Двое маленьких котят Под окошечком сидят. Слышат малые, что кто-то Постучался к ним в ворота.</p>
+  </div>
+</div>
+
+</body>
+</html>
